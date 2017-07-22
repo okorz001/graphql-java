@@ -81,7 +81,7 @@ public class ValuesResolver {
 
         //noinspection ConstantConditions
         if (!isValid(type, inputValue)) {
-            throw new GraphQLException("Invalid value for type");
+            throw new ValueParsingException(type, inputValue);
         }
 
         if (inputValue == null && variableDefinition.getDefaultValue() != null) {
